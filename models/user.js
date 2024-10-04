@@ -1,0 +1,43 @@
+module.exports =(sequelize,Sequelize)=>{
+  return sequelize.define("users",{
+    uuid:{
+      type:Sequelize.UUID,
+      defaultValue:Sequelize.UUIDV4
+    },
+    name:{
+      type:Sequelize.STRING,
+      
+    },
+    email:{
+      type:Sequelize.STRING
+    },
+    password:{
+      type:Sequelize.STRING
+    },
+    access_token:{
+      type:Sequelize.STRING
+    },
+    otp:{
+      type:Sequelize.INTEGER
+    },
+    is_verified:{
+      type:Sequelize.INTEGER
+    },
+    deleted_at:{
+      type:Sequelize.DATE
+    },
+    created_by:{
+      type:Sequelize.INTEGER
+    },
+    updated_by:{
+      type:Sequelize.INTEGER
+    },
+    deleted_by:{
+      type:Sequelize.INTEGER
+    }
+  },{
+    timestamps:true,
+    createdAt:"created_at",
+    updatedAt:"updated_at"
+  })
+}
